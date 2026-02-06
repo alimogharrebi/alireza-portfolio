@@ -17,24 +17,22 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    env:
-      PAGES_ARTIFACT_NAME: github-pages-${{ github.run_id }}-${{ github.run_attempt }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
       - name: Show Pages artifact name
         run: |
-          echo "Using artifact: ${PAGES_ARTIFACT_NAME}"
+          echo "Using artifact: github-pages-${{ github.run_id }}-${{ github.run_attempt }}"
 
       - name: Upload static site artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          name: ${{ env.PAGES_ARTIFACT_NAME }}
+          name: github-pages-${{ github.run_id }}-${{ github.run_attempt }}
           path: .
 
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
         with:
-          artifact_name: ${{ env.PAGES_ARTIFACT_NAME }}
+          artifact_name: github-pages-${{ github.run_id }}-${{ github.run_attempt }}
