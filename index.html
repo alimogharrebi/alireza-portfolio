@@ -1,58 +1,185 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fa" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>علیرضا مقربی | رزومه و پرتفولیو</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;300;400;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Vazirmatn', sans-serif;
-            background-color: #0b0f19;
-            color: #f1f5f9;
-        }
-        .glass {
-            background: rgba(15, 23, 42, 0.8);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        .hero-gradient {
-            background: linear-gradient(135deg, #0f172a 0%, #020617 100%);
-        }
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #020617;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #1e293b;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #334155;
-        }
-        section {
-            scroll-margin-top: 80px;
-        }
+      :root {
+        --bg: #0b0f19;
+        --bg-alt: #020617;
+        --panel: rgba(15, 23, 42, 0.75);
+        --panel-2: rgba(15, 23, 42, 0.55);
+        --text: #f1f5f9;
+        --muted: #94a3b8;
+        --primary: #3b82f6;
+        --border: rgba(148, 163, 184, 0.2);
+      }
+      * { box-sizing: border-box; }
+      html, body { margin: 0; padding: 0; }
+      body {
+        font-family: Tahoma, Arial, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.7;
+      }
+      a { color: inherit; text-decoration: none; }
+      .container { width: min(1120px, 92%); margin: 0 auto; }
+      .header {
+        position: sticky; top: 0; z-index: 10;
+        border-bottom: 1px solid rgba(255,255,255,.08);
+        background: rgba(2, 6, 23, 0.88);
+        backdrop-filter: blur(10px);
+      }
+      .header-inner { display:flex; justify-content:space-between; align-items:center; padding: 14px 0; }
+      .brand { font-weight: 700; font-size: 1.2rem; }
+      .nav { display:flex; gap: 20px; color: #cbd5e1; font-size: .92rem; }
+      .nav a:hover { color: var(--primary); }
+      .hero {
+        padding: 84px 0 58px;
+        background: linear-gradient(135deg, #0f172a 0%, #020617 100%);
+        border-bottom: 1px solid rgba(255,255,255,.05);
+      }
+      .hero h2 { color: #60a5fa; margin: 0 0 12px; font-size: 1.1rem; }
+      .hero h1 { margin: 0 0 12px; font-size: clamp(2rem, 4vw, 4.2rem); line-height: 1.25; }
+      .hero .sub { color: #94a3b8; font-size: clamp(1rem, 2.4vw, 1.5rem); margin: 0 0 20px; }
+      .pills { display:flex; flex-wrap: wrap; gap: 10px; margin-bottom: 26px; }
+      .pill { border:1px solid var(--border); background: rgba(255,255,255,.03); padding: 8px 12px; border-radius: 12px; }
+      .btn { display:inline-block; background:#2563eb; color:#fff; border-radius:999px; padding:12px 26px; font-weight:700; }
+      .btn:hover { background:#1d4ed8; }
+      section { padding: 62px 0; }
+      .section-title { font-size: clamp(1.35rem, 2.5vw, 2rem); margin: 0 0 8px; }
+      .section-sub { color: var(--muted); margin: 0 0 26px; }
+      .grid { display:grid; gap: 16px; }
+      .skills-grid { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+      .topics-grid { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+      .projects-grid { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+      .card { background: var(--panel); border:1px solid var(--border); border-radius: 18px; padding: 22px; }
+      .card h3 { margin: 8px 0; }
+      .muted { color: var(--muted); }
+      .table-wrap { overflow-x:auto; border-radius:20px; border:1px solid var(--border); background: var(--panel-2); }
+      table { width: 100%; border-collapse: collapse; min-width: 680px; }
+      th, td { padding: 12px 14px; border-bottom: 1px solid rgba(148,163,184,.17); text-align:right; }
+      th { background: rgba(15,23,42,.9); }
+      tbody tr:last-child td { border-bottom: 0; }
+      .footer { text-align:center; border-top:1px solid var(--border); background:#020617; padding: 52px 0; }
+      @media (max-width: 840px) { .nav { display:none; } }
+      @media (min-width: 700px) {
+        .skills-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .topics-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      }
+      @media (min-width: 1024px) {
+        .skills-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+        .topics-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+        .projects-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      }
     </style>
-<script type="importmap">
-{
-  "imports": {
-    "react/": "https://esm.sh/react@^19.2.4/",
-    "react": "https://esm.sh/react@^19.2.4",
-    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
-    "vite": "https://esm.sh/vite@^7.3.1"
-  }
-}
-</script>
-<link rel="stylesheet" href="/index.css">
-</head>
-<body>
-    <div id="root"></div>
-    <script type="module" src="index.tsx"></script>
-<script type="module" src="/index.tsx"></script>
-</body>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container header-inner">
+        <div class="brand">علیرضا مقربی</div>
+        <nav class="nav">
+          <a href="#about">درباره من</a>
+          <a href="#skills">مهارت‌ها</a>
+          <a href="#topics">مباحث تدریس</a>
+          <a href="#teaching">سوابق تدریس</a>
+          <a href="#projects">پروژه‌ها</a>
+        </nav>
+      </div>
+    </header>
+
+    <section id="about" class="hero">
+      <div class="container">
+        <h2>به نام خدا</h2>
+        <h1>علیرضا مقربی</h1>
+        <p class="sub">تحلیلگر ارشد داده در شرکت <strong style="color:#60a5fa">Coflow</strong> (مستقر در استانبول)</p>
+        <div class="pills">
+          <div class="pill">کارشناسی ارشد مهندسی فناوری اطلاعات</div>
+          <div class="pill">استانبول / تهران</div>
+        </div>
+        <a class="btn" href="#teaching">مشاهده سوابق تدریس</a>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <h2 class="section-title">مهارت‌ها و تخصص‌ها</h2>
+        <p class="section-sub">مجموعه ابزارها و دانش فنی در حوزه داده و هوش تجاری</p>
+        <div class="grid skills-grid">
+          <article class="card"><div style="font-size:2rem">📊</div><h3>Power BI & DAX</h3><p class="muted">طراحی داشبوردهای مدیریتی پیشرفته و مدل‌سازی داده‌های پیچیده مالی و صنعتی</p></article>
+          <article class="card"><div style="font-size:2rem">🤖</div><h3>Python و AI</h3><p class="muted">تحلیل داده با TensorFlow، NumPy و Pandas و توسعه مدل‌های هوش مصنوعی</p></article>
+          <article class="card"><div style="font-size:2rem">💾</div><h3>SQL & Databases</h3><p class="muted">طراحی و مدیریت پایگاه داده با SQL Server و Access</p></article>
+          <article class="card"><div style="font-size:2rem">🏢</div><h3>Excel پیشرفته</h3><p class="muted">مدل‌سازی مالی و مهندسی، خودکارسازی با VBA و گزارش‌سازی حرفه‌ای</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="topics" style="background: rgba(2,6,23,.55); border-top:1px solid var(--border); border-bottom:1px solid var(--border)">
+      <div class="container">
+        <h2 class="section-title">مباحث تدریس</h2>
+        <div class="grid topics-grid">
+          <div class="card">هوش تجاری و تحلیل داده با Power BI</div>
+          <div class="card">برنامه‌نویسی پایتون (Python) در علم داده</div>
+          <div class="card">اکسل پیشرفته و کاربرد آن در مدیریت کسب‌وکار</div>
+          <div class="card">پایگاه داده SQL Server و طراحی بانک اطلاعاتی</div>
+          <div class="card">DAX و مدلسازی داده در Power BI</div>
+          <div class="card">برنامه‌نویسی VBA و خودکارسازی در اکسل</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="teaching">
+      <div class="container">
+        <h2 class="section-title">برخی از سوابق تدریس</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>عنوان دوره</th><th>مجموعه / سازمان</th><th>زمان</th></tr>
+            </thead>
+            <tbody class="muted">
+              <tr><td>کاربرد Power BI در کنترل پروژه</td><td>صنعتی و معدنی گل‌گهر سیرجان</td><td>زمستان ۱۴۰۴</td></tr>
+              <tr><td>ساخت داشبوردهای مدیریتی با Power BI</td><td>پتروشیمی مارون - ماهشهر</td><td>زمستان ۱۴۰۴</td></tr>
+              <tr><td>اکسل پیشرفته</td><td>پالایشگاه تهران</td><td>زمستان ۱۴۰۴</td></tr>
+              <tr><td>پایگاه داده</td><td>شرکت نفت ستاره خلیج فارس</td><td>زمستان ۱۴۰۴</td></tr>
+              <tr><td>هوش تجاری با Power BI</td><td>مپنا پارس</td><td>زمستان ۱۴۰۰</td></tr>
+            </tbody>
+          </table>
+          <p class="muted" style="text-align:center; padding: 10px 16px 20px;">و صدها دوره دیگر در سازمان‌های مختلف...</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" style="background:#020617">
+      <div class="container">
+        <h2 class="section-title">پروژه‌های انجام شده</h2>
+        <div class="grid projects-grid">
+          <article class="card"><small class="muted">۱۴۰۴</small><h3>داشبورد منابع انسانی</h3><p class="muted">خطوط لوله و مخابرات نفت ایران</p></article>
+          <article class="card"><small class="muted">۱۴۰۴</small><h3>داشبورد توقفات و تولید</h3><p class="muted">ملی مس ایران (دره زار)</p></article>
+          <article class="card"><small class="muted">2024</small><h3>داشبورد فروش برند Perspective</h3><p class="muted">Kelebek Tekstil (ترکیه)</p></article>
+          <article class="card"><small class="muted">2023</small><h3>داشبورد فروش برند عطر Mad Parfüm</h3><p class="muted">ترکیه</p></article>
+          <article class="card"><small class="muted">۱۴۰۲</small><h3>داشبورد منابع انسانی و حقوق و دستمزد</h3><p class="muted">ملی پالایش و پخش فرآورده‌های نفتی</p></article>
+          <article class="card"><small class="muted">۱۴۰۰</small><h3>داشبورد کنترل پروژه (EPC)</h3><p class="muted">ویستافراز</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container" style="max-width:900px">
+        <h2 class="section-title">تحصیلات و مدارک آکادمیک</h2>
+        <div class="grid">
+          <article class="card"><h3>کارشناسی ارشد مهندسی فناوری اطلاعات</h3><p style="color:#60a5fa">گرایش شبکه‌های کامپیوتری</p><p class="muted">دانشگاه آزاد اسلامی واحد پرند (فارغ‌التحصیل ۱۳۹۹)</p></article>
+          <article class="card"><h3>کارشناسی مهندسی مکانیک</h3><p style="color:#60a5fa">گرایش حرارت و سیالات</p><p class="muted">دانشگاه آزاد اسلامی واحد کرج (فارغ‌التحصیل ۱۳۹۱)</p></article>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <h2 class="section-title" style="margin-top:0">با من در ارتباط باشید</h2>
+        <p class="muted">LinkedIn: linkedin.com/in/alirezamogharrebi</p>
+        <p class="muted" style="font-size:.9rem">تمامی حقوق محفوظ است © ۲۰۲۶ - علیرضا مقربی</p>
+      </div>
+    </footer>
+  </body>
 </html>
