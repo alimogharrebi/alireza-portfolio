@@ -5,44 +5,122 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>علیرضا مقربی | رزومه و پرتفولیو</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;300;400;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;300;400;700;800&display=swap" rel="stylesheet" />
     <style>
-      body {
-        font-family: 'Vazirmatn', sans-serif;
-        background-color: #0b0f19;
-        color: #f1f5f9;
-      }
-      .glass {
-        background: rgba(15, 23, 42, 0.8);
-        backdrop-filter: blur(12px);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-      }
-      .hero-gradient {
-        background: linear-gradient(135deg, #0f172a 0%, #020617 100%);
-      }
-      ::-webkit-scrollbar {
-        width: 8px;
-      }
-      ::-webkit-scrollbar-track {
-        background: #020617;
-      }
-      ::-webkit-scrollbar-thumb {
-        background: #1e293b;
-        border-radius: 4px;
-      }
-      ::-webkit-scrollbar-thumb:hover {
-        background: #334155;
-      }
-      section {
-        scroll-margin-top: 80px;
-      }
+      body { font-family: 'Vazirmatn', sans-serif; background:#0b0f19; color:#f1f5f9; }
+      .glass { background: rgba(15,23,42,.85); backdrop-filter: blur(12px); border-bottom:1px solid rgba(255,255,255,.06); }
+      .hero-gradient { background: linear-gradient(135deg,#0f172a 0%, #020617 100%); }
+      section { scroll-margin-top: 90px; }
+      ::-webkit-scrollbar{width:8px}::-webkit-scrollbar-track{background:#020617}::-webkit-scrollbar-thumb{background:#1e293b;border-radius:4px}
     </style>
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="./index.tsx"></script>
+    <header class="fixed top-0 w-full z-50 glass">
+      <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <div class="text-xl font-bold text-white">علیرضا مقربی</div>
+        <nav class="hidden md:flex gap-8 text-sm font-medium text-slate-300">
+          <a href="#about" class="hover:text-blue-400 transition-colors">درباره من</a>
+          <a href="#skills" class="hover:text-blue-400 transition-colors">مهارت‌ها</a>
+          <a href="#topics" class="hover:text-blue-400 transition-colors">مباحث تدریس</a>
+          <a href="#teaching" class="hover:text-blue-400 transition-colors">سوابق تدریس</a>
+          <a href="#projects" class="hover:text-blue-400 transition-colors">پروژه‌ها</a>
+        </nav>
+      </div>
+    </header>
+
+    <section id="about" class="pt-32 pb-24 hero-gradient text-white overflow-hidden relative border-b border-white/5">
+      <div class="absolute top-0 right-0 w-96 h-96 bg-blue-600 rounded-full blur-[120px] opacity-10 -mr-48 -mt-48"></div>
+      <div class="absolute bottom-0 left-0 w-96 h-96 bg-indigo-600 rounded-full blur-[120px] opacity-10 -ml-48 -mb-48"></div>
+      <div class="container mx-auto px-6 relative z-10">
+        <div class="max-w-3xl">
+          <h2 class="text-blue-400 font-bold mb-4">به نام خدا</h2>
+          <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight tracking-tight">علیرضا مقربی</h1>
+          <p class="text-2xl text-slate-400 mb-8 font-light">تحلیلگر ارشد داده در شرکت <span class="text-blue-400 font-medium">Coflow</span> (مستقر در استانبول)</p>
+          <div class="flex flex-wrap gap-4 mb-10">
+            <div class="bg-white/5 border border-white/10 px-4 py-2 rounded-xl">کارشناسی ارشد مهندسی فناوری اطلاعات</div>
+            <div class="bg-white/5 border border-white/10 px-4 py-2 rounded-xl">استانبول / تهران</div>
+          </div>
+          <a href="#teaching" class="bg-blue-600 hover:bg-blue-500 text-white px-8 py-3.5 rounded-full font-bold transition-all inline-block">مشاهده سوابق تدریس</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="py-20 bg-[#0b0f19]">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold text-white mb-3">مهارت‌ها و تخصص‌ها</h2>
+          <p class="text-slate-500">مجموعه ابزارها و دانش فنی در حوزه داده و هوش تجاری</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="p-8 rounded-2xl bg-slate-900/50 border border-white/5"><div class="text-4xl mb-4">📊</div><h3 class="text-xl font-bold mb-3">Power BI & DAX</h3><p class="text-slate-400 text-sm">طراحی داشبوردهای مدیریتی پیشرفته و مدل‌سازی داده‌های پیچیده مالی و صنعتی</p></div>
+          <div class="p-8 rounded-2xl bg-slate-900/50 border border-white/5"><div class="text-4xl mb-4">🤖</div><h3 class="text-xl font-bold mb-3">Python و AI</h3><p class="text-slate-400 text-sm">تحلیل داده با TensorFlow، NumPy و Pandas و توسعه مدل‌های هوش مصنوعی</p></div>
+          <div class="p-8 rounded-2xl bg-slate-900/50 border border-white/5"><div class="text-4xl mb-4">💾</div><h3 class="text-xl font-bold mb-3">SQL & Databases</h3><p class="text-slate-400 text-sm">طراحی و مدیریت پایگاه داده با SQL Server و Access</p></div>
+          <div class="p-8 rounded-2xl bg-slate-900/50 border border-white/5"><div class="text-4xl mb-4">🏢</div><h3 class="text-xl font-bold mb-3">Excel پیشرفته</h3><p class="text-slate-400 text-sm">مدل‌سازی مالی و مهندسی، خودکارسازی با VBA و گزارش‌سازی حرفه‌ای</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="topics" class="py-20 bg-slate-900/20 border-y border-white/5">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold mb-10">مباحث تدریس</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800">هوش تجاری و تحلیل داده با Power BI</div>
+          <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800">برنامه‌نویسی پایتون (Python) در علم داده</div>
+          <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800">اکسل پیشرفته و کاربرد آن در مهندسی و مالی</div>
+          <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800">طراحی و مدیریت پایگاه داده (SQL Server & Access)</div>
+          <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800">کنترل پروژه و داشبوردهای مدیریتی</div>
+          <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800">برنامه‌نویسی VBA و خودکارسازی در اکسل</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="teaching" class="py-20">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold mb-10">برخی از سوابق تدریس</h2>
+        <div class="bg-slate-900/50 border border-slate-800 rounded-3xl overflow-x-auto">
+          <table class="w-full text-right border-collapse">
+            <thead><tr class="border-b border-slate-800 bg-slate-900/80"><th class="p-4">عنوان دوره</th><th class="p-4">مجموعه / سازمان</th><th class="p-4">زمان</th></tr></thead>
+            <tbody class="text-slate-300">
+              <tr class="border-b border-slate-800/50"><td class="p-4">کاربرد Power BI در کنترل پروژه</td><td class="p-4">صنعتی و معدنی گل‌گهر سیرجان</td><td class="p-4">زمستان ۱۴۰۴</td></tr>
+              <tr class="border-b border-slate-800/50"><td class="p-4">ساخت داشبوردهای مدیریتی با Power BI</td><td class="p-4">پتروشیمی مارون - ماهشهر</td><td class="p-4">زمستان ۱۴۰۴</td></tr>
+              <tr class="border-b border-slate-800/50"><td class="p-4">اکسل پیشرفته</td><td class="p-4">پالایشگاه تهران</td><td class="p-4">زمستان ۱۴۰۴</td></tr>
+              <tr class="border-b border-slate-800/50"><td class="p-4">پایگاه داده</td><td class="p-4">شرکت نفت ستاره خلیج فارس</td><td class="p-4">زمستان ۱۴۰۴</td></tr>
+              <tr><td class="p-4">هوش تجاری با Power BI</td><td class="p-4">مپنا پارس</td><td class="p-4">زمستان ۱۴۰۰</td></tr>
+            </tbody>
+          </table>
+          <div class="p-6 text-center text-sm text-slate-500">و صدها دوره دیگر در سازمان‌های مختلف...</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="py-20 bg-slate-950">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold mb-10">پروژه‌های انجام شده</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="p-8 rounded-3xl bg-slate-900/50 border border-slate-800"><span class="text-xs text-slate-500">۱۴۰۴</span><h3 class="text-xl font-bold my-3">داشبورد منابع انسانی</h3><p class="text-slate-400">خطوط لوله و مخابرات نفت ایران</p></div>
+          <div class="p-8 rounded-3xl bg-slate-900/50 border border-slate-800"><span class="text-xs text-slate-500">۱۴۰۴</span><h3 class="text-xl font-bold my-3">داشبورد توقفات و تولید</h3><p class="text-slate-400">ملی مس ایران (دره زار)</p></div>
+          <div class="p-8 rounded-3xl bg-slate-900/50 border border-slate-800"><span class="text-xs text-slate-500">2024</span><h3 class="text-xl font-bold my-3">داشبورد فروش برند Perspective</h3><p class="text-slate-400">Kelebek Tekstil (ترکیه)</p></div>
+          <div class="p-8 rounded-3xl bg-slate-900/50 border border-slate-800"><span class="text-xs text-slate-500">2023</span><h3 class="text-xl font-bold my-3">داشبورد فروش برند عطر Mad Parfüm</h3><p class="text-slate-400">ترکیه</p></div>
+          <div class="p-8 rounded-3xl bg-slate-900/50 border border-slate-800"><span class="text-xs text-slate-500">۱۴۰۲</span><h3 class="text-xl font-bold my-3">داشبورد منابع انسانی و حقوق و دستمزد</h3><p class="text-slate-400">ملی پالایش و پخش فرآورده‌های نفتی</p></div>
+          <div class="p-8 rounded-3xl bg-slate-900/50 border border-slate-800"><span class="text-xs text-slate-500">۱۴۰۰</span><h3 class="text-xl font-bold my-3">داشبورد کنترل پروژه (EPC)</h3><p class="text-slate-400">ویستافراز</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 bg-[#0b0f19]">
+      <div class="container mx-auto px-6 max-w-4xl">
+        <h2 class="text-3xl font-bold mb-10">تحصیلات و مدارک آکادمیک</h2>
+        <div class="space-y-8 text-slate-300">
+          <div class="p-6 rounded-2xl bg-slate-900/40 border border-white/5"><h4 class="text-xl text-white font-bold">کارشناسی ارشد مهندسی فناوری اطلاعات</h4><p class="text-blue-400">گرایش شبکه‌های کامپیوتری</p><p class="text-slate-500">دانشگاه آزاد اسلامی واحد پرند (فارغ‌التحصیل ۱۳۹۹)</p></div>
+          <div class="p-6 rounded-2xl bg-slate-900/40 border border-white/5"><h4 class="text-xl text-white font-bold">کارشناسی مهندسی مکانیک</h4><p class="text-blue-400">گرایش حرارت و سیالات</p><p class="text-slate-500">دانشگاه آزاد اسلامی واحد کرج (فارغ‌التحصیل ۱۳۹۱)</p></div>
+        </div>
+      </div>
+    </section>
+
+    <footer id="contact" class="py-16 border-t border-slate-900 bg-slate-950 text-center">
+      <h2 class="text-3xl font-bold mb-4">با من در ارتباط باشید</h2>
+      <p class="text-slate-400 mb-8">LinkedIn: linkedin.com/in/alirezamogharrebi</p>
+      <p class="text-slate-500 text-sm">تمامی حقوق محفوظ است © ۲۰۲۶ - علیرضا مقربی</p>
+    </footer>
   </body>
 </html>
